@@ -1,4 +1,4 @@
-# Wallpaper Pattern Generator: Circle² (***Wallpaper for the mind***)
+# Wallpaper Pattern Generator, ***Wallpaper for the mind***
 
 ## Circle²
 
