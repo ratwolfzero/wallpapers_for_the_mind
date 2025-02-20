@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import random
 
 # Constants
-WIDTH, HEIGHT = 200, 200  # Grid resolution
-CORNER_A = -15  # Lower-left corner
-CORNER_B = -20  # Lower-right corner
-SIDE = 87  # Side length of the square grid
-NUM_COLORS = 3  # Number of distinct colors
+WIDTH, HEIGHT = 250, 250  # Grid resolution
+CORNER_A = -5  # Lower-left corner
+CORNER_B = -11  # Lower-right corner
+SIDE = 37  # Side length of the square grid
+NUM_COLORS = 4  # Number of distinct colors
 
 def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
     """Compute a pattern based on squared sums with multiple colors."""
