@@ -1,25 +1,26 @@
-# Wallpaper Pattern Generator (Wallpapers for the Mind)
+# Wallpaper Pattern Generator: Circle² (***Wallpaper for the mind***)
 
-![circle](circle_1.png)
+## Circle²
 
-This Python script generates visually interesting wallpaper patterns based on a mathematical algorithm inspired by the "Circles" pattern. This pattern explores integer lattice points and is closely associated with the works of **A.K. Dewdney**, who popularized computational patterns through his *Scientific American* "Computer Recreations" column, and **E. Connett** from the University of Minnesota
+This Python script generates visually stunning wallpaper patterns using the Circle² algorithm, inspired by the work of John E. Connett. The algorithm, originally introduced in A.K. Dewdney's "Computer Recreations" column in Scientific American (September 1986), explores the mathematical properties of integer lattice points and the equation z = x² + y².
 
-## Historical Context
+## About Circle²
 
-The "Circles" pattern is based on the equation `x^2 + y^2`, which defines a circle in the coordinate plane. By considering integer values of `x` and `y` and applying the modulo operator, circular patterns emerge. This method leads to concentric ring-like visuals, a concept explored by Dewdney.
+The Circle² algorithm visualizes the distribution of squared sums (z = x² + y²) for integer coordinates (x, y). By assigning colors based on the properties of z, the algorithm creates concentric circular patterns. This script uses the modulo operator to generate repeating color bands, a common technique in procedural pattern generation.
 
-## Algorithm
+## How It Works
 
-For each pixel in the grid, the script calculates `z = x^2 + y^2` and assigns a color based on the value of `z` using the modulo operator. This generates repeating patterns based on the distribution of squared sums, producing the distinctive "Circles" effect.
+A grid of pixels is defined by WIDTH and HEIGHT.
+For each pixel, the coordinates (x, y) are mapped to the equation z = x² + y².
+The value of z is used to assign a color, typically via z % NUM_COLORS, creating repeating patterns.
+Customization
 
-## Customization
+## Adjust the following parameters to create unique designs:
 
-You can adjust the following parameters:
-
-- `WIDTH`, `HEIGHT`: Resolution of the generated image.
-- `CORNER_A`, `CORNER_B`: Coordinates of the lower-left corner of the grid.
-- `SIDE`: Side length of the square grid.
-- `NUM_COLORS`: Number of distinct colors used in the pattern.
+- WIDTH, HEIGHT: Resolution of the image.
+- CORNER_A, CORNER_B: Lower-left corner of the grid.
+- SIDE: Side length of the grid.
+- NUM_COLORS: Number of colors in the palette.
 
 ## Example
 
