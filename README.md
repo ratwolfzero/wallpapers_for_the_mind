@@ -10,7 +10,7 @@ The Circle² algorithm visualizes the distribution of squared sums (z = x² + y�
 
 A grid of pixels is defined by WIDTH and HEIGHT.
 For each pixel, the coordinates (x, y) are mapped to the equation z = x² + y².
-The value of z is used to assign a color, in this script via z % NUM_COLORS, creating repeating patterns.
+In this script the value of z determines the color, using z modulo NUM_COLORS to create repeating patterns.
 
 ### Customization
 
