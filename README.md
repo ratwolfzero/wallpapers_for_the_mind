@@ -1,4 +1,6 @@
-# Wallpaper Pattern Generator
+# Wallpaper Pattern Generator (Wallpapers for the Mind)
+
+![circle](circle_1.png)
 
 This Python script generates visually interesting wallpaper patterns based on a mathematical algorithm inspired by the "Circles" pattern. This pattern explores integer lattice points and is closely associated with the works of **A.K. Dewdney**, who popularized computational patterns through his *Scientific American* "Computer Recreations" column, and **E. Connett** from the University of Minnesota
 
