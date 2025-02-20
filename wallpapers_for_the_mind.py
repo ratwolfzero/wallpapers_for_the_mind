@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import random
 
 # Constants
-WIDTH, HEIGHT = 250, 250  # Grid resolution
-CORNER_A = -5  # Lower-left corner
-CORNER_B = -11  # Lower-right corner
-SIDE = 37  # Side length of the square grid
+WIDTH, HEIGHT = 400, 400  # Grid resolution
+CORNER_A = -15  # Lower-left corner
+CORNER_B = -25  # Lower-right corner
+SIDE = 41  # Side length of the square grid
 NUM_COLORS = 4  # Number of distinct colors
 
 def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
