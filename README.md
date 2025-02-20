@@ -1,5 +1,7 @@
 # Wallpaper Pattern Generator, ***Wallpaper for the mind***
 
+![Circle](circle_1.png)
+
 ## Historical Context
 
 This Python script generates visually stunning wallpaper patterns using the Circle² algorithm, inspired by the work of John E. Connett. The algorithm, originally introduced in A.K. Dewdney's "Computer Recreations" column in Scientific American (September 1986), explores the mathematical properties of integer lattice points and the equation z = x² + y².
