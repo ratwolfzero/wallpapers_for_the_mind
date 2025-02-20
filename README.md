@@ -4,7 +4,7 @@
 
 ## Historical Context
 
-This Python script generates visually stunning wallpaper patterns using the Circle² algorithm, inspired by the work of John E. Connett. The algorithm, originally introduced in A.K. Dewdney's "Computer Recreations" column in Scientific American (September 1986), explores the mathematical properties of integer lattice points (grid points where both x and y are integers) and the equation z = x² + y².
+This Python script generates visually stunning wallpaper patterns based on a mathematical algorithm developed by John E. Connett. The algorithm was introduced in A.K. Dewdney's "Computer Recreations" column in Scientific American (September 1986), where he coined the name Circle² for this method. It explores the mathematical properties of integer lattice points (grid points where both x and y are integers) and the equation: z = x² + y².
 
 The Circle² algorithm visualizes the distribution of squared sums (z = x² + y²) for integer coordinates (x, y). By assigning colors based on the properties of z, the algorithm creates concentric circular patterns.
 
