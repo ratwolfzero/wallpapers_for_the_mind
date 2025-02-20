@@ -4,8 +4,8 @@ import random
 
 # Constants
 WIDTH, HEIGHT = 100, 100  # Grid resolution
-CORNER_A = -11  # Lower-left corner
-CORNER_B = -23  # Lower-right corner
+CORNER_A = -15  # Lower-left corner
+CORNER_B = -20  # Lower-right corner
 SIDE = 87  # Side length of the square grid
 NUM_COLORS = 3  # Number of distinct colors
 
