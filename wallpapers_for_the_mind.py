@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import random
 
 # Constants
-WIDTH, HEIGHT = 100, 100  # Grid resolution
+WIDTH, HEIGHT = 200, 200  # Grid resolution
 CORNER_A = -15  # Lower-left corner
 CORNER_B = -20  # Lower-right corner
 SIDE = 87  # Side length of the square grid
@@ -30,7 +30,7 @@ def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
 
 def plot_wallpaper(image, corner_a, side, corner_b):
     """Plot the generated wallpaper pattern."""
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 8))
     plt.imshow(image, extent=[corner_a, corner_a + side, corner_b, corner_b + side])
     plt.axis('off')
     plt.show()
