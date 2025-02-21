@@ -53,8 +53,8 @@ Varying the `NUM_COLORS` parameter will dramatically change the look of the patt
 
 ## Efficiency Considerations
 
-- The **historical implementation** uses explicit loops and per-element calculations, making it conceptually clear but computationally expensive.
-- The **NumPy-optimized version** leverages broadcasting and avoids explicit iteration, making it significantly faster and more memory-efficient while maintaining the same mathematical principle.
+- The **historical implementation** uses explicit loops and per-element calculations, making it conceptually clear but is computationally more expensive.
+- The **NumPy-optimized version** avoids explicit iteration
 
 ## Further Exploration
 
