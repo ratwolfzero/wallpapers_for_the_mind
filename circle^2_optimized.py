@@ -11,23 +11,23 @@ NUM_COLORS = 4  # Number of distinct colors
 
 def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
     """
-    Function to compute a pattern based on squared sums with multiple colors.
+    Generate a wallpaper pattern based on squared sums with multiple colors.
     """
-    colors = np.random.randint(0, 256, (num_colors, 3), dtype=np.uint8)  # Full 8-bit range
+    # Randomly generate distinct RGB colors
+    colors = np.random.randint(0, 256, (num_colors, 3), dtype=np.uint8)
 
-    x_scale = side / width
-    y_scale = side / height
+    # Create coordinate grids using broadcasting (no need for meshgrid)
+    x = corner_a + np.linspace(0, side, width)[:, None]  # Column vector (width, 1)
+    y = corner_b + np.linspace(0, side, height)[None, :] # Row vector (1, height)
 
-    x = corner_a + x_scale * np.arange(width) 
-    y = corner_b + y_scale * np.arange(height) 
+    # Compute squared sum pattern
+    z = x**2 + y**2
 
-    # Create meshgrid for proper calculation of z
-    X, Y = np.meshgrid(x, y)
-    z = X**2 + Y**2
-
-    color_indices = (z % num_colors).astype(int) # Convert to integer type
+    # Assign colors cyclically using modulo
+    color_indices = (z % num_colors).astype(int)
 
     return colors[color_indices]
+
 
 
 def plot_wallpaper(image, corner_a, side, corner_b):

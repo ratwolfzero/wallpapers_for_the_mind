@@ -26,6 +26,7 @@ $$
 for each grid point \((x, y)\), where \( x \) and \( y \) are derived from a scaled coordinate system. The integer part of \( z \) (or its direct modulo operation) is used to assign colors cyclically from a predefined palette.
 
 ### **Approach**
+
 1. **Grid Construction:**
    - The grid spans a defined rectangular area, with \( x \) and \( y \) values computed based on a scaling factor.
    - In the historical loop-based version, this is done iteratively for each pixel.
