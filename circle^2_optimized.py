@@ -17,17 +17,18 @@ def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
     colors = np.random.randint(0, 256, (num_colors, 3), dtype=np.uint8)
 
     # Create coordinate grids using broadcasting (no need for meshgrid)
-    x = corner_a + np.linspace(0, side, width)[:, None]  # Column vector (width, 1)
-    y = corner_b + np.linspace(0, side, height)[None, :] # Row vector (1, height)
+    # Column vector (width, 1)
+    x = corner_a + np.linspace(0, side, width)[:, None]
+    # Row vector (1, height)
+    y = corner_b + np.linspace(0, side, height)[None, :]
 
     # Compute squared sum pattern
     z = x**2 + y**2
 
     # Assign colors cyclically using modulo
-    color_indices = (z % num_colors).astype(int)
+    color_indices = (z % num_colors).astype(np.uint8)
 
     return colors[color_indices]
-
 
 
 def plot_wallpaper(image, corner_a, side, corner_b):
