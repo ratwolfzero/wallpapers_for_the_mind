@@ -4,7 +4,7 @@
 
 ## Historical Context
 
-This Python script generates visually stunning wallpaper patterns based on a mathematical algorithm developed by John E. Connett. The algorithm was introduced in A.K. Dewdney's "Computer Recreations" column in Scientific American (September 1986), where he coined the name Circle² for this method. It explores the mathematical properties of integer lattice points (grid points where both x and y are integers) and the equation:
+This Python script generates visually stunning wallpaper patterns based on a mathematical algorithm developed by John E. Connett. The algorithm was introduced in A.K. Dewdney's "Computer Recreations" column in Scientific American (September 1986), where he coined the name Circle² for this method. It explores the mathematical properties of grid-based coordinate systems and the equation:
 
 $$
 \large
@@ -12,29 +12,51 @@ z = x² + y²
 \large
 $$
 
-The Circle² algorithm visualizes the distribution of squared sums (z = x² + y²) for integer coordinates (x, y).  
-By assigning colors based on the properties of z, the algorithm creates concentric circular patterns.
+The Circle² algorithm visualizes the distribution of squared sums \( z = x² + y² \) for a structured grid of coordinates \((x, y)\).  
+By assigning colors based on the properties of \( z \), the algorithm creates concentric circular patterns.
 
-### How It Works
+## How It Works
 
-- A grid of pixels is defined by WIDTH and HEIGHT.  
-- For each pixel, the coordinates (x, y) are mapped to the equation z = x² + y².  
-- In this script the value of z determines the color, using z modulo NUM_COLORS to create repeating patterns.
+This algorithm computes a grid-based wallpaper pattern by evaluating the function:
 
-### Customization
+$$
+z = x² + y²
+$$
+
+for each grid point \((x, y)\), where \( x \) and \( y \) are derived from a scaled coordinate system. The integer part of \( z \) (or its direct modulo operation) is used to assign colors cyclically from a predefined palette.
+
+### **Approach**
+1. **Grid Construction:**
+   - The grid spans a defined rectangular area, with \( x \) and \( y \) values computed based on a scaling factor.
+   - In the historical loop-based version, this is done iteratively for each pixel.
+   - In the optimized NumPy version, this is achieved efficiently using vectorized operations.
+
+2. **Squared Sum Computation:**
+   - Each coordinate pair is mapped to \( z = x² + y² \), where \( x \) and \( y \) are **not necessarily integers** but follow a structured grid pattern.
+
+3. **Color Assignment:**
+   - The integer-based modulo operation \((z \mod \text{NUM_COLORS})\) cycles through a fixed color palette.
+   - The historical version explicitly converts \( z \) to an integer before applying modulo, while the optimized version lets NumPy handle it directly.
+
+## Customization
 
 Adjust the following parameters to create unique designs:
 
-- WIDTH, HEIGHT: Resolution of the image.
-- CORNER_A, CORNER_B: Lower-left corner of the grid.
-- SIDE: Side length of the grid.
-- NUM_COLORS: Number of colors in the palette.
+- **WIDTH, HEIGHT**: Resolution of the image.
+- **CORNER_A, CORNER_B**: Lower-left corner of the grid.
+- **SIDE**: Side length of the grid.
+- **NUM_COLORS**: Number of colors in the palette.
 
-### Example
+## Example
 
 Varying the `NUM_COLORS` parameter will dramatically change the look of the pattern. Experiment with different values to see how the design evolves!
 
-### Further Exploration
+## Efficiency Considerations
+
+- The **historical implementation** uses explicit loops and per-element calculations, making it conceptually clear but computationally expensive.
+- The **NumPy-optimized version** leverages broadcasting and avoids explicit iteration, making it significantly faster and more memory-efficient while maintaining the same mathematical principle.
+
+## Further Exploration
 
 - Try different mathematical functions to create new patterns.
 - Implement custom color palettes.
