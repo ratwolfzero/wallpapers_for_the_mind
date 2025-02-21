@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Constants
-WIDTH, HEIGHT = 400, 231  # Grid resolution
+WIDTH, HEIGHT = 400, 400  # Grid resolution
 CORNER_A = -15  # Lower-left corner
 CORNER_B = -25  # Lower-right corner
 SIDE = 41  # Side length of the square grid
@@ -18,7 +18,7 @@ def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
     x_scale = side / width
     y_scale = side / height
 
-    x = corner_a + x_scale * np.arange(height)
+    x = corner_a + x_scale * np.arange(height)[:, np.newaxis] / width
     y = corner_b + y_scale * np.arange(width)
 
     z = x**2 + y**2
