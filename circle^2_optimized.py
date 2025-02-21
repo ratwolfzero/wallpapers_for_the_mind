@@ -18,11 +18,14 @@ def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
     x_scale = side / width
     y_scale = side / height
 
-    x = corner_a + x_scale * np.arange(height)[:, np.newaxis] / width
-    y = corner_b + y_scale * np.arange(width)
+    x = corner_a + x_scale * np.arange(width) 
+    y = corner_b + y_scale * np.arange(height) 
 
-    z = x**2 + y**2
-    color_indices = z % num_colors
+    # Create meshgrid for proper calculation of z
+    X, Y = np.meshgrid(x, y)
+    z = X**2 + Y**2
+
+    color_indices = (z % num_colors).astype(int) # Convert to integer type
 
     return colors[color_indices]
 
