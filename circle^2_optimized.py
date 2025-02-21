@@ -13,6 +13,10 @@ def compute_wallpaper(corner_a, corner_b, side, width, height, num_colors):
     """
     Generate a wallpaper pattern based on squared sums with multiple colors.
     """
+
+    # Set a seed for reproducibility (optional)
+    # np.random.seed(0)
+
     # Randomly generate distinct RGB colors
     colors = np.random.randint(0, 256, (num_colors, 3), dtype=np.uint8)
 
